@@ -14,5 +14,9 @@
 *** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
 *** Copyright (c) 2007-2010, Niklas Sorensson
 
+-- specification  G !(OBSTACLE = 1 & AGENT = 6)  is true
+-- specification  G !(OBSTACLE = 2 & AGENT = 5)  is true
+-- specification  G !(OBSTACLE = 3 & AGENT = 8)  is true
+-- specification  G !(OBSTACLE = 4 & AGENT = 11)  is true
+-- specification  G !(OBSTACLE = 5 & AGENT = 12)  is true
 -- specification  G ( F CAPTURED)  is true
--- specification  G !COLLISION  is true

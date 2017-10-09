@@ -1,13 +1,13 @@
 MODULE main
   VAR
 
-    OBSTACLE : {1,2,3,4,5};   # location of the obstacle
-    OBS_DIR : boolean;        
-    AGENT : {1,2,3,4,5,6,7,8,9,10,11,12};
-    GRAB : boolean;
-    DROP : boolean;
-    CAPTURED : boolean;
-    COLLISION : boolean;
+    OBSTACLE : {1,2,3,4,5};   -- location of the obstacle
+    PRIV_OBSTACLE : {1,2,3,4,5}; -- previous location of the obstacle       
+    AGENT : {1,2,3,4,5,6,7,8,9,10,11,12}; -- location of the agent
+    GRAB : boolean;  -- True if the flag is grabbed and false otherwise
+    DROP : boolean;  -- True if the flag is being dropped and false otherwise
+    CAPTURED : boolean; -- True if the flag is captured
+    --COLLISION : boolean; -- True if agent and obstacle collide
 
   ASSIGN
 
@@ -15,32 +15,38 @@ MODULE main
     init(DROP) := FALSE;
     init(AGENT) := 3;
     init(OBSTACLE) := 1;
-    init(OBS_DIR) := FALSE;
+    init(PRIV_OBSTACLE) := 1;
     init(GRAB) := FALSE;
-    init(COLLISION) := FALSE;
+    --init(COLLISION) := FALSE;
 
+    -- modeling the movement of the obstacle
     next(OBSTACLE) :=
       case
-        OBSTACLE = 1 & OBS_DIR = FALSE : 2;
-        OBSTACLE = 2 & OBS_DIR = FALSE : 3;
-        OBSTACLE = 3 & OBS_DIR = FALSE : 4;
-        OBSTACLE = 4 & OBS_DIR = FALSE : 5;
-        OBSTACLE = 5 & OBS_DIR = TRUE : 4;
-        OBSTACLE = 4 & OBS_DIR = TRUE : 3;
-        OBSTACLE = 3 & OBS_DIR = TRUE : 2;
-        OBSTACLE = 2 & OBS_DIR = TRUE : 1;
+        OBSTACLE = 1 : 2;
+        OBSTACLE = 2 & PRIV_OBSTACLE = 1 : 3;
+        OBSTACLE = 3 & PRIV_OBSTACLE = 2: 4;
+        OBSTACLE = 4 & PRIV_OBSTACLE = 3 : 5;
+        OBSTACLE = 5 : 4;
+        OBSTACLE = 4 & PRIV_OBSTACLE = 5 : 3;
+        OBSTACLE = 3 & PRIV_OBSTACLE = 4 : 2;
+        OBSTACLE = 2 & PRIV_OBSTACLE = 3 : 1;
         TRUE : OBSTACLE;      
       esac;
 
-    next(OBS_DIR) :=
+    -- using this variable as a memory for the obstacle's movement
+    -- it is needed to determine the heading direction of the obstacle
+    next(PRIV_OBSTACLE) :=
       case
-        OBS_DIR = FALSE & OBSTACLE = 5 : TRUE;
-        OBS_DIR = FALSE & OBSTACLE != 5 : FALSE;
-        OBS_DIR = TRUE & OBSTACLE = 1 : FALSE;
-        OBS_DIR = TRUE & OBSTACLE != 1 : TRUE;
-        TRUE : OBS_DIR;
+        OBSTACLE = 1 : 1;
+        OBSTACLE = 2 : 2;
+        OBSTACLE = 3 : 3;
+        OBSTACLE = 4 : 4;
+        OBSTACLE = 5 : 5;
+        TRUE : PRIV_OBSTACLE;
       esac;
 
+
+    -- modeling the flag grabing action 
     next(GRAB) :=
       case
         GRAB = TRUE & DROP = FALSE : TRUE;
@@ -50,6 +56,7 @@ MODULE main
         TRUE : GRAB;
       esac;
 
+    -- modeling the flag dropping action
     next(DROP) :=
       case
         DROP = FALSE & GRAB = FALSE : FALSE;
@@ -59,6 +66,7 @@ MODULE main
         TRUE : DROP;
       esac;
 
+    -- modeling the rules for the flag being considered as captured (rules of the game)
     next(CAPTURED) :=
       case
         CAPTURED = TRUE : FALSE;
@@ -67,6 +75,7 @@ MODULE main
         TRUE : CAPTURED;
       esac;
 
+    -- modeling the agent movement in the grid to be able to capture the flag
     next(AGENT) :=
       case
         AGENT = 1 & GRAB = FALSE : 2;
@@ -83,18 +92,22 @@ MODULE main
         TRUE : AGENT;
       esac;
 
-    next(COLLISION) :=
-      case
-        COLLISION = FALSE & OBSTACLE = 1 & AGENT = 6 : TRUE;
-        COLLISION = FALSE & OBSTACLE = 2 & AGENT = 5 : TRUE;
-        COLLISION = FALSE & OBSTACLE = 3 & AGENT = 8 : TRUE;
-        COLLISION = FALSE & OBSTACLE = 4 & AGENT = 11 : TRUE;
-        COLLISION = FALSE & OBSTACLE = 5 & AGENT = 12 : TRUE;
-        COLLISION = TRUE : TRUE;
-        TRUE : COLLISION;
-      esac; 
+--    next(COLLISION) :=
+--      case
+--        COLLISION = FALSE & OBSTACLE = 1 & AGENT = 6 : TRUE;
+--        COLLISION = FALSE & OBSTACLE = 2 & AGENT = 5 : TRUE;
+--        COLLISION = FALSE & OBSTACLE = 3 & AGENT = 8 : TRUE;
+--        COLLISION = FALSE & OBSTACLE = 4 & AGENT = 11 : TRUE;
+--        COLLISION = FALSE & OBSTACLE = 5 & AGENT = 12 : TRUE;
+--        COLLISION = TRUE : TRUE;
+--        TRUE : COLLISION;
+--      esac; 
 
 
   LTLSPEC G(F CAPTURED)
-  LTLSPEC G (! COLLISION)
-
+  LTLSPEC G ! (OBSTACLE = 1 & AGENT = 6)
+  LTLSPEC G ! (OBSTACLE = 2 & AGENT = 5)
+  LTLSPEC G ! (OBSTACLE = 3 & AGENT = 8)
+  LTLSPEC G ! (OBSTACLE = 4 & AGENT = 11)
+  LTLSPEC G ! (OBSTACLE = 5 & AGENT = 12)
+--  LTLSPEC G (! COLLISION)
