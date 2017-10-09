@@ -103,11 +103,15 @@ MODULE main
 --        TRUE : COLLISION;
 --      esac; 
 
-
+-- verifying the agent's is ability to capture the flag infinitely often
   LTLSPEC G(F CAPTURED)
+
+-- verifying no collisions
   LTLSPEC G ! (OBSTACLE = 1 & AGENT = 6)
   LTLSPEC G ! (OBSTACLE = 2 & AGENT = 5)
   LTLSPEC G ! (OBSTACLE = 3 & AGENT = 8)
   LTLSPEC G ! (OBSTACLE = 4 & AGENT = 11)
   LTLSPEC G ! (OBSTACLE = 5 & AGENT = 12)
+
+-- or simply (if collision is modeled)
 --  LTLSPEC G (! COLLISION)
