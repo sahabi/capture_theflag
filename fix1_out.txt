@@ -1,0 +1,419 @@
+*** This is NuSMV 2.6.0 (compiled on Thu Sep 28 14:40:57 2017)
+*** Enabled addons are: compass
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <Please report bugs to <nusmv-users@fbk.eu>>
+
+*** Copyright (c) 2010-2014, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://minisat.se/MiniSat.html
+*** Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+*** Copyright (c) 2007-2010, Niklas Sorensson
+
+-- specification  G ( F CAPTURED)  is true
+-- specification  G !COLLISION  is false
+-- as demonstrated by the following execution sequence
+Trace Description: LTL Counterexample 
+Trace Type: Counterexample 
+  -> State: 1.1 <-
+    OBSTACLE = 1
+    OBS_DIR = FALSE
+    AGENT = 3
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = FALSE
+    COLLISION = FALSE
+  -> State: 1.2 <-
+    OBSTACLE = 2
+  -> State: 1.3 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.4 <-
+    OBSTACLE = 4
+    AGENT = 9
+  -> State: 1.5 <-
+    OBSTACLE = 5
+    GRAB = TRUE
+  -> State: 1.6 <-
+    OBS_DIR = TRUE
+    AGENT = 6
+  -> State: 1.7 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.8 <-
+    OBSTACLE = 3
+    AGENT = 2
+  -> State: 1.9 <-
+    OBSTACLE = 2
+    AGENT = 1
+  -> State: 1.10 <-
+    OBSTACLE = 1
+    DROP = TRUE
+  -> State: 1.11 <-
+    OBS_DIR = FALSE
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.12 <-
+    OBSTACLE = 2
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.13 <-
+    OBSTACLE = 3
+    AGENT = 3
+  -> State: 1.14 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.15 <-
+    OBSTACLE = 5
+    AGENT = 9
+  -> State: 1.16 <-
+    OBS_DIR = TRUE
+    GRAB = TRUE
+  -> State: 1.17 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.18 <-
+    OBSTACLE = 3
+    AGENT = 3
+  -> State: 1.19 <-
+    OBSTACLE = 2
+    AGENT = 2
+  -> State: 1.20 <-
+    OBSTACLE = 1
+    AGENT = 1
+  -> State: 1.21 <-
+    OBS_DIR = FALSE
+    DROP = TRUE
+  -> State: 1.22 <-
+    OBSTACLE = 2
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.23 <-
+    OBSTACLE = 3
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.24 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.25 <-
+    OBSTACLE = 5
+    AGENT = 6
+  -> State: 1.26 <-
+    OBS_DIR = TRUE
+    AGENT = 9
+  -> State: 1.27 <-
+    OBSTACLE = 4
+    GRAB = TRUE
+  -> State: 1.28 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.29 <-
+    OBSTACLE = 2
+    AGENT = 3
+  -> State: 1.30 <-
+    OBSTACLE = 1
+    AGENT = 2
+  -> State: 1.31 <-
+    OBS_DIR = FALSE
+    AGENT = 1
+  -> State: 1.32 <-
+    OBSTACLE = 2
+    DROP = TRUE
+  -> State: 1.33 <-
+    OBSTACLE = 3
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.34 <-
+    OBSTACLE = 4
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.35 <-
+    OBSTACLE = 5
+    AGENT = 3
+  -> State: 1.36 <-
+    OBS_DIR = TRUE
+    AGENT = 6
+  -> State: 1.37 <-
+    OBSTACLE = 4
+    AGENT = 9
+  -> State: 1.38 <-
+    OBSTACLE = 3
+    GRAB = TRUE
+  -> State: 1.39 <-
+    OBSTACLE = 2
+    AGENT = 6
+  -> State: 1.40 <-
+    OBSTACLE = 1
+    AGENT = 3
+  -> State: 1.41 <-
+    OBS_DIR = FALSE
+    AGENT = 2
+  -> State: 1.42 <-
+    OBSTACLE = 2
+    AGENT = 1
+  -> State: 1.43 <-
+    OBSTACLE = 3
+    DROP = TRUE
+  -> State: 1.44 <-
+    OBSTACLE = 4
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.45 <-
+    OBSTACLE = 5
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.46 <-
+    OBS_DIR = TRUE
+    AGENT = 3
+  -> State: 1.47 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.48 <-
+    OBSTACLE = 3
+    AGENT = 9
+  -> State: 1.49 <-
+    OBSTACLE = 2
+    GRAB = TRUE
+  -> State: 1.50 <-
+    OBSTACLE = 1
+    AGENT = 6
+  -> State: 1.51 <-
+    OBS_DIR = FALSE
+    AGENT = 3
+    COLLISION = TRUE
+  -- Loop starts here
+  -> State: 1.52 <-
+    OBSTACLE = 2
+    AGENT = 2
+  -> State: 1.53 <-
+    OBSTACLE = 3
+    AGENT = 1
+  -> State: 1.54 <-
+    OBSTACLE = 4
+    DROP = TRUE
+  -> State: 1.55 <-
+    OBSTACLE = 5
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.56 <-
+    OBS_DIR = TRUE
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.57 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.58 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.59 <-
+    OBSTACLE = 2
+    AGENT = 9
+  -> State: 1.60 <-
+    OBSTACLE = 1
+    GRAB = TRUE
+  -> State: 1.61 <-
+    OBS_DIR = FALSE
+  -> State: 1.62 <-
+    OBSTACLE = 2
+  -> State: 1.63 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.64 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.65 <-
+    OBSTACLE = 5
+    AGENT = 2
+  -> State: 1.66 <-
+    OBS_DIR = TRUE
+    AGENT = 1
+  -> State: 1.67 <-
+    OBSTACLE = 4
+    DROP = TRUE
+  -> State: 1.68 <-
+    OBSTACLE = 3
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.69 <-
+    OBSTACLE = 2
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.70 <-
+    OBSTACLE = 1
+    AGENT = 3
+  -> State: 1.71 <-
+    OBS_DIR = FALSE
+  -> State: 1.72 <-
+    OBSTACLE = 2
+  -> State: 1.73 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.74 <-
+    OBSTACLE = 4
+    AGENT = 9
+  -> State: 1.75 <-
+    OBSTACLE = 5
+    GRAB = TRUE
+  -> State: 1.76 <-
+    OBS_DIR = TRUE
+    AGENT = 6
+  -> State: 1.77 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.78 <-
+    OBSTACLE = 3
+    AGENT = 2
+  -> State: 1.79 <-
+    OBSTACLE = 2
+    AGENT = 1
+  -> State: 1.80 <-
+    OBSTACLE = 1
+    DROP = TRUE
+  -> State: 1.81 <-
+    OBS_DIR = FALSE
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.82 <-
+    OBSTACLE = 2
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.83 <-
+    OBSTACLE = 3
+    AGENT = 3
+  -> State: 1.84 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.85 <-
+    OBSTACLE = 5
+    AGENT = 9
+  -> State: 1.86 <-
+    OBS_DIR = TRUE
+    GRAB = TRUE
+  -> State: 1.87 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.88 <-
+    OBSTACLE = 3
+    AGENT = 3
+  -> State: 1.89 <-
+    OBSTACLE = 2
+    AGENT = 2
+  -> State: 1.90 <-
+    OBSTACLE = 1
+    AGENT = 1
+  -> State: 1.91 <-
+    OBS_DIR = FALSE
+    DROP = TRUE
+  -> State: 1.92 <-
+    OBSTACLE = 2
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.93 <-
+    OBSTACLE = 3
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.94 <-
+    OBSTACLE = 4
+    AGENT = 3
+  -> State: 1.95 <-
+    OBSTACLE = 5
+    AGENT = 6
+  -> State: 1.96 <-
+    OBS_DIR = TRUE
+    AGENT = 9
+  -> State: 1.97 <-
+    OBSTACLE = 4
+    GRAB = TRUE
+  -> State: 1.98 <-
+    OBSTACLE = 3
+    AGENT = 6
+  -> State: 1.99 <-
+    OBSTACLE = 2
+    AGENT = 3
+  -> State: 1.100 <-
+    OBSTACLE = 1
+    AGENT = 2
+  -> State: 1.101 <-
+    OBS_DIR = FALSE
+    AGENT = 1
+  -> State: 1.102 <-
+    OBSTACLE = 2
+    DROP = TRUE
+  -> State: 1.103 <-
+    OBSTACLE = 3
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.104 <-
+    OBSTACLE = 4
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.105 <-
+    OBSTACLE = 5
+    AGENT = 3
+  -> State: 1.106 <-
+    OBS_DIR = TRUE
+    AGENT = 6
+  -> State: 1.107 <-
+    OBSTACLE = 4
+    AGENT = 9
+  -> State: 1.108 <-
+    OBSTACLE = 3
+    GRAB = TRUE
+  -> State: 1.109 <-
+    OBSTACLE = 2
+    AGENT = 6
+  -> State: 1.110 <-
+    OBSTACLE = 1
+    AGENT = 3
+  -> State: 1.111 <-
+    OBS_DIR = FALSE
+    AGENT = 2
+  -> State: 1.112 <-
+    OBSTACLE = 2
+    AGENT = 1
+  -> State: 1.113 <-
+    OBSTACLE = 3
+    DROP = TRUE
+  -> State: 1.114 <-
+    OBSTACLE = 4
+    GRAB = FALSE
+    DROP = FALSE
+    CAPTURED = TRUE
+  -> State: 1.115 <-
+    OBSTACLE = 5
+    AGENT = 2
+    CAPTURED = FALSE
+  -> State: 1.116 <-
+    OBS_DIR = TRUE
+    AGENT = 3
+  -> State: 1.117 <-
+    OBSTACLE = 4
+    AGENT = 6
+  -> State: 1.118 <-
+    OBSTACLE = 3
+    AGENT = 9
+  -> State: 1.119 <-
+    OBSTACLE = 2
+    GRAB = TRUE
+  -> State: 1.120 <-
+    OBSTACLE = 1
+    AGENT = 6
+  -> State: 1.121 <-
+    OBS_DIR = FALSE
+    AGENT = 3
+  -> State: 1.122 <-
+    OBSTACLE = 2
+    AGENT = 2

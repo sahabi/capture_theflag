@@ -1,0 +1,100 @@
+MODULE main
+  VAR
+
+    OBSTACLE : {1,2,3,4,5};
+    OBS_DIR : boolean;
+    AGENT : {1,2,3,4,5,6,7,8,9,10,11,12};
+    GRAB : boolean;
+    DROP : boolean;
+    CAPTURED : boolean;
+    COLLISION : boolean;
+
+  ASSIGN
+
+    init(CAPTURED) := FALSE;
+    init(DROP) := FALSE;
+    init(AGENT) := 3;
+    init(OBSTACLE) := 1;
+    init(OBS_DIR) := FALSE;
+    init(GRAB) := FALSE;
+    init(COLLISION) := FALSE;
+
+    next(OBSTACLE) :=
+      case
+        OBSTACLE = 1 & OBS_DIR = FALSE : 2;
+        OBSTACLE = 2 & OBS_DIR = FALSE : 3;
+        OBSTACLE = 3 & OBS_DIR = FALSE : 4;
+        OBSTACLE = 4 & OBS_DIR = FALSE : 5;
+        OBSTACLE = 5 & OBS_DIR = TRUE : 4;
+        OBSTACLE = 4 & OBS_DIR = TRUE : 3;
+        OBSTACLE = 3 & OBS_DIR = TRUE : 2;
+        OBSTACLE = 2 & OBS_DIR = TRUE : 1;
+        TRUE : OBSTACLE;      
+      esac;
+
+    next(OBS_DIR) :=
+      case
+        OBS_DIR = FALSE & OBSTACLE = 5 : TRUE;
+        OBS_DIR = FALSE & OBSTACLE != 5 : FALSE;
+        OBS_DIR = TRUE & OBSTACLE = 1 : FALSE;
+        OBS_DIR = TRUE & OBSTACLE != 1 : TRUE;
+        TRUE : OBS_DIR;
+      esac;
+
+    next(GRAB) :=
+      case
+        GRAB = TRUE & DROP = FALSE : TRUE;
+        GRAB = TRUE & DROP = TRUE : FALSE;
+        GRAB = FALSE & AGENT != 9 : FALSE;
+        GRAB = FALSE & AGENT = 9 : TRUE;
+        TRUE : GRAB;
+      esac;
+
+    next(DROP) :=
+      case
+        DROP = FALSE & GRAB = FALSE : FALSE;
+        DROP = FALSE & GRAB = TRUE & AGENT = 1 : TRUE;
+        DROP = FALSE & GRAB = TRUE & AGENT != 1 : FALSE;
+        DROP = TRUE : FALSE;
+        TRUE : DROP;
+      esac;
+
+    next(CAPTURED) :=
+      case
+        CAPTURED = TRUE : FALSE;
+        CAPTURED = FALSE & DROP = TRUE & AGENT = 1 : TRUE;
+        CAPTURED = FALSE & (DROP = FALSE | AGENT != 1) : FALSE;
+        TRUE : CAPTURED;
+      esac;
+
+    next(AGENT) :=
+      case
+        AGENT = 1 & GRAB = FALSE : 2;
+        AGENT = 2 & GRAB = FALSE : 3;
+        AGENT = 3 & (OBSTACLE = 1 | OBSTACLE = 2) & GRAB = FALSE : 3;
+        AGENT = 3 & (OBSTACLE != 1 & OBSTACLE != 2) & GRAB = FALSE : 6;
+        AGENT = 6 & GRAB = FALSE : 9;
+        AGENT = 9 & (OBSTACLE = 1 | OBSTACLE = 2 | GRAB = FALSE) : 9;
+        AGENT = 9 & (OBSTACLE != 1 & OBSTACLE !=2) & GRAB = TRUE : 6;
+        AGENT = 6 & GRAB = TRUE : 3;
+        AGENT = 3 & GRAB = TRUE : 2;
+        AGENT = 2 & GRAB = TRUE : 1;
+        AGENT = 1 & GRAB = TRUE : 1;
+        TRUE : AGENT;
+      esac;
+
+    next(COLLISION) :=
+      case
+        COLLISION = FALSE & OBSTACLE = 1 & AGENT = 6 : TRUE;
+        COLLISION = FALSE & OBSTACLE = 2 & AGENT = 5 : TRUE;
+        COLLISION = FALSE & OBSTACLE = 3 & AGENT = 8 : TRUE;
+        COLLISION = FALSE & OBSTACLE = 4 & AGENT = 11 : TRUE;
+        COLLISION = FALSE & OBSTACLE = 5 & AGENT = 12 : TRUE;
+        COLLISION = TRUE : TRUE;
+        TRUE : COLLISION;
+      esac; 
+
+
+  LTLSPEC G(F CAPTURED)
+  LTLSPEC G (! COLLISION)
+
