@@ -1,4 +1,4 @@
-*** This is NuSMV 2.6.0 (compiled on Thu Sep 28 14:40:57 2017)
+*** This is NuSMV 2.6.0 (compiled on Wed Oct 14 15:36:56 2015)
 *** Enabled addons are: compass
 *** For more information on NuSMV see <http://nusmv.fbk.eu>
 *** or email to <nusmv-users@list.fbk.eu>.
@@ -20,7 +20,7 @@ Trace Description: LTL Counterexample
 Trace Type: Counterexample 
   -> State: 1.1 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 3
     GRAB = FALSE
     DROP = FALSE
@@ -29,309 +29,309 @@ Trace Type: Counterexample
     OBSTACLE = 2
   -> State: 1.3 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -> State: 1.4 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 9
   -> State: 1.5 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     GRAB = TRUE
   -> State: 1.6 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 6
   -> State: 1.7 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 3
   -> State: 1.8 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 2
   -> State: 1.9 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 1
   -> State: 1.10 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     DROP = TRUE
   -> State: 1.11 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.12 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.13 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 3
   -> State: 1.14 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 6
   -> State: 1.15 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 9
   -> State: 1.16 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     GRAB = TRUE
   -> State: 1.17 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -- Loop starts here
   -> State: 1.18 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 3
   -> State: 1.19 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 2
   -> State: 1.20 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 1
   -> State: 1.21 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     DROP = TRUE
   -> State: 1.22 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.23 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.24 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 3
   -> State: 1.25 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -> State: 1.26 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 9
   -> State: 1.27 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     GRAB = TRUE
   -> State: 1.28 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 6
   -> State: 1.29 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 3
   -> State: 1.30 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 2
   -> State: 1.31 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 1
   -> State: 1.32 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     DROP = TRUE
   -> State: 1.33 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.34 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.35 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 3
   -> State: 1.36 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 6
   -> State: 1.37 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 9
   -> State: 1.38 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     GRAB = TRUE
   -> State: 1.39 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 6
   -> State: 1.40 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 3
   -> State: 1.41 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 2
   -> State: 1.42 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 1
   -> State: 1.43 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     DROP = TRUE
   -> State: 1.44 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.45 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.46 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 3
   -> State: 1.47 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 6
   -> State: 1.48 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 9
   -> State: 1.49 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     GRAB = TRUE
   -> State: 1.50 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
   -> State: 1.51 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -> State: 1.52 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 3
   -> State: 1.53 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 2
   -> State: 1.54 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 1
   -> State: 1.55 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     DROP = TRUE
   -> State: 1.56 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.57 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.58 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 3
   -> State: 1.59 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -> State: 1.60 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 9
   -> State: 1.61 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     GRAB = TRUE
   -> State: 1.62 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 6
   -> State: 1.63 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 3
   -> State: 1.64 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 2
   -> State: 1.65 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 1
   -> State: 1.66 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     DROP = TRUE
   -> State: 1.67 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     GRAB = FALSE
     DROP = FALSE
     CAPTURED = TRUE
   -> State: 1.68 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     AGENT = 2
     CAPTURED = FALSE
   -> State: 1.69 <-
     OBSTACLE = 5
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 3
   -> State: 1.70 <-
     OBSTACLE = 4
-    PRIV_OBSTACLE = 5
+    PREV_OBSTACLE = 5
     AGENT = 6
   -> State: 1.71 <-
     OBSTACLE = 3
-    PRIV_OBSTACLE = 4
+    PREV_OBSTACLE = 4
     AGENT = 9
   -> State: 1.72 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 3
+    PREV_OBSTACLE = 3
     GRAB = TRUE
   -> State: 1.73 <-
     OBSTACLE = 1
-    PRIV_OBSTACLE = 2
+    PREV_OBSTACLE = 2
     AGENT = 6
   -> State: 1.74 <-
     OBSTACLE = 2
-    PRIV_OBSTACLE = 1
+    PREV_OBSTACLE = 1
     AGENT = 3
 -- specification  G !(OBSTACLE = 2 & AGENT = 5)  is true
 -- specification  G !(OBSTACLE = 3 & AGENT = 8)  is true
